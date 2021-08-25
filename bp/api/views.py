@@ -20,6 +20,8 @@ def blog_detail(request, pk):
     """
     try:
         blogs = Blog.objects.get(id=pk)
+        common_tags = Blog.tags.most_common()[:18]
+        popular_blog = Blog.objects.order_by('hit_count_generic')[:5]
     except Blog.DoesNotExist:
         return HttpResponse(status=404)
 
