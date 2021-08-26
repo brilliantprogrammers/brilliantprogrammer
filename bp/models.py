@@ -7,6 +7,7 @@ from ckeditor.fields import RichTextField
 class Blog(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)
+    text = models.CharField(max_length=100,null=True)
     body = RichTextField(blank=True,null=True)
     created = models.DateField(
         auto_now_add=True
