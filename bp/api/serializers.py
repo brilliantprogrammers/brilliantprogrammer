@@ -6,4 +6,4 @@ from bp.models import Blog
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
-        fields = ['id','heading','body','image','author','category','read_time']
+        fields = ['id','title','body','image','author','slug']
