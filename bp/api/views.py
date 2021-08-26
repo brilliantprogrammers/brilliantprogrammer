@@ -6,6 +6,7 @@ from rest_framework.parsers import JSONParser
 from bp.models import Blog
 from .serializers import BlogSerializer
 from taggit.models import Tag
+from hitcount.views import HitCountDetailView
 
 @csrf_exempt
 def blog_list(request):
