@@ -17,12 +17,12 @@ def blog_list(request):
 
 
 @csrf_exempt
-def blog_detail(request, pk):
+def blog_detail(request, slug):
     """
     Retrieve, update or delete a code snippet.
     """
     try:
-        blogs = Blog.objects.get(id=pk)
+        blogs = Blog.objects.get(slug=slug)
     except Blog.DoesNotExist:
         return HttpResponse(status=404)
 
